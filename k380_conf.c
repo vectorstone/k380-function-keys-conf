@@ -37,7 +37,7 @@ const unsigned char k380_seq_fkeys_off[] = {0x10, 0xff, 0x0b, 0x1e, 0x01, 0x00, 
 const char opt_on[]  = "on";
 const char opt_off[] = "off";
 
-void send(hid_device *fd, const unsigned char * buf, const int len)
+void send_configuration(hid_device *fd, const unsigned char * buf, const int len)
 {
 	int res;
 
@@ -149,12 +149,12 @@ int main(int argc, char **argv)
 	if (flag_fkeys)
 	{
 		printf("Sending ON: \n");
-		send(fd, k380_seq_fkeys_on,  sizeof(k380_seq_fkeys_on));
+		send_configuration(fd, k380_seq_fkeys_on,  sizeof(k380_seq_fkeys_on));
 	}
 	else
 	{
 		printf("Sending OFF: \n");
-		send(fd, k380_seq_fkeys_off, sizeof(k380_seq_fkeys_off));
+		send_configuration(fd, k380_seq_fkeys_off, sizeof(k380_seq_fkeys_off));
 	}
 
 	// Close the device

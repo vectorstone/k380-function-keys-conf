@@ -1,1 +1,1 @@
-cc -g  k380_conf.c -o k380 /usr/local/lib/libhidapi.dylib
+cc -g  k380_conf.c -o k380  /opt/homebrew/lib/libhidapi.dylib
