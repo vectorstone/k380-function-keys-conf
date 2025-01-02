@@ -9,7 +9,11 @@ brew install hidapi
 ```
 2. Build this app
 ```
-./build.sh
+# suitable for intel chip mac
+./build_Intel.sh
+
+# suitable for apple silicon mac
+./build_Apple_Silicon.sh
 ```
 3. Run it as root (Note that you might be asked to give permissions for terminal app to access input device)
 ```
