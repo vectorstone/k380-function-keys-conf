@@ -77,6 +77,17 @@ install_name_tool -change /opt/homebrew/opt/hidapi/lib/libhidapi.0.dylib \
 Note the Homebrew keg ships only `.dylib`, no `.a`, so static linking is not an
 option when building against the installed package.
 
+## Linux
+
+```shell
+./build_Linux.sh          # builds ./k380-linux (ELF, hidapi-hidraw)
+sudo ./k380-linux -f on   # flip the top row to F1-F12
+```
+
+The tracked `./k380` is the macOS (Mach-O arm64) artifact; do not overwrite it
+on Linux. See [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for the dotfiles
+`k380` alias and the Linux "command not found" diagnosis.
+
 ## Based on
 
 https://github.com/jergusg/k380-function-keys-conf

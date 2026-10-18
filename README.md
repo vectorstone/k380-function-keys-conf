@@ -20,6 +20,23 @@ brew install hidapi
 sudo ./k380 -f on
 ```
 
+## Linux
+
+Build a native Linux binary with the `hidapi-hidraw` backend:
+
+```sh
+# Arch: sudo pacman -S hidapi
+# Debian/Ubuntu: sudo apt install libhidapi-dev
+# Fedora: sudo dnf install hidapi-devel
+./build_Linux.sh
+sudo ./k380-linux -f on
+```
+
+`build_Linux.sh` writes `./k380-linux` (ELF) and never overwrites the tracked
+macOS `./k380` binary, so one checkout can serve both systems. To expose the
+same `k380` command as on macOS, see
+[TROUBLESHOOTING.md](./TROUBLESHOOTING.md).
+
 ## Troubleshooting
 
 `k380` links against the Homebrew `hidapi` **dylib** at runtime, so `hidapi` must
